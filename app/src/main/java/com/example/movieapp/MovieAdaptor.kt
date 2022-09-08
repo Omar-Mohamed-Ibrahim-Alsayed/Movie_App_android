@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.squareup.picasso.Picasso
 
 
 class MovieAdaptor(private val movies : List<Movie>) : RecyclerView.Adapter<MovieAdaptor.MovieViewHolder>() {
@@ -44,7 +43,7 @@ class MovieAdaptor(private val movies : List<Movie>) : RecyclerView.Adapter<Movi
 
         fun bind(movie: Movie) {
             name.text = movie.name
-            Picasso.with(itemView.context).load(movie.image).into(image)
+            image.setImageResource(movie.image)
         }
     }
 

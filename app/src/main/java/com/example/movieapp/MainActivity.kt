@@ -1,14 +1,9 @@
 package com.example.movieapp
 
-import android.content.Intent
-import android.media.MediaPlayer
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieapp.networking.MovieResult
-import com.example.movieapp.networking.MoviesServices
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,14 +12,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var textview: TextView
+    private lateinit var recyclerView : RecyclerView
+    private lateinit var textview : TextView
     val page = 1
     val category = "popular"
     val language = "en-US"
     val apiKey = "7c10065a20413339fd17bcfc13346768"
     val base_URL = "https://api.themoviedb.org"
-    val imgBase = "https://image.tmdb.org/t/p/w500"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,17 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         textview = findViewById(R.id.temp)
         recyclerView = findViewById(R.id.rview)
-        val logOut=findViewById<Button>(R.id.logoutButton)
-        logOut.setOnClickListener{
-            val mediaPlayer=MediaPlayer.create(this,R.raw.logout2)
-            mediaPlayer.start()
-            val firstintent= Intent(this,HomePageActivity::class.java)
-            startActivity(firstintent)
-        }
-        val userName=intent.getStringExtra("Name")
-        val helloText=findViewById<TextView>(R.id.helloText)
-        if (userName!="")
-         helloText.text="${userName}"
+
+
 
         val retrofit = Retrofit.Builder()
             .baseUrl(base_URL)
@@ -51,14 +36,14 @@ class MainActivity : AppCompatActivity() {
 
         val movieProcess = retrofit.create(MoviesServices::class.java)
 
-        val call: Call<MovieResult> = movieProcess.getMovies(apiKey, language, page)
+        val call : Call<MovieResult> = movieProcess.getMovies(apiKey,language,page)
 
         updateList(call)
 
     }
 
-    private fun updateList(call: Call<MovieResult>) {
-        call.enqueue(object : Callback<MovieResult> {
+    private fun updateList(call : Call<MovieResult>){
+        call.enqueue(object : Callback<MovieResult>{
             override fun onResponse(call: Call<MovieResult>, response: Response<MovieResult>) {
                 val r = response.body()
                 val final = r?.results
@@ -73,10 +58,10 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun sortMovies(res: List<MovieResult.ResultsDTO>): List<Movie> {
-        var movieList = mutableListOf<Movie>()
+    private fun sortMovies(res :  List<MovieResult.ResultsDTO>): List<Movie>{
+        var movieList =  mutableListOf<Movie>()
         res.forEach {
-            movieList.add(Movie("${it.title}", "$imgBase${it.posterPath}", "\t${it.overview}"))
+            movieList.add(Movie("${it.title}",R.drawable.hangoverpng,"\t${it.overview}"))
         }
         return movieList
     }
