@@ -45,7 +45,6 @@ class MovieAdaptor(private val movies : List<Movie>) : RecyclerView.Adapter<Movi
         fun bind(movie: Movie) {
             name.text = movie.name
             Picasso.with(itemView.context).load(movie.image).into(image)
-            //image.setImageResource(movie.image)
         }
     }
 

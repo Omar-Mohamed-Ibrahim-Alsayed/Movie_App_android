@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.movieapp.networking.MovieResult
+import com.example.movieapp.networking.MoviesServices
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
