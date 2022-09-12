@@ -12,13 +12,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView : RecyclerView
-    private lateinit var textview : TextView
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var textview: TextView
     val page = 1
     val category = "popular"
     val language = "en-US"
     val apiKey = "7c10065a20413339fd17bcfc13346768"
     val base_URL = "https://api.themoviedb.org"
+    val imgBase = "https://image.tmdb.org/t/p/w500"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.rview)
 
 
-
         val retrofit = Retrofit.Builder()
             .baseUrl(base_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -36,14 +36,14 @@ class MainActivity : AppCompatActivity() {
 
         val movieProcess = retrofit.create(MoviesServices::class.java)
 
-        val call : Call<MovieResult> = movieProcess.getMovies(apiKey,language,page)
+        val call: Call<MovieResult> = movieProcess.getMovies(apiKey, language, page)
 
         updateList(call)
 
     }
 
-    private fun updateList(call : Call<MovieResult>){
-        call.enqueue(object : Callback<MovieResult>{
+    private fun updateList(call: Call<MovieResult>) {
+        call.enqueue(object : Callback<MovieResult> {
             override fun onResponse(call: Call<MovieResult>, response: Response<MovieResult>) {
                 val r = response.body()
                 val final = r?.results
@@ -58,10 +58,10 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun sortMovies(res :  List<MovieResult.ResultsDTO>): List<Movie>{
-        var movieList =  mutableListOf<Movie>()
+    private fun sortMovies(res: List<MovieResult.ResultsDTO>): List<Movie> {
+        var movieList = mutableListOf<Movie>()
         res.forEach {
-            movieList.add(Movie("${it.title}",R.drawable.hangoverpng,"\t${it.overview}"))
+            movieList.add(Movie("${it.title}", "$imgBase${it.posterPath}", "\t${it.overview}"))
         }
         return movieList
     }

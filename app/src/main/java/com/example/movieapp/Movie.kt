@@ -5,19 +5,19 @@ import android.os.Parcelable
 
 data class Movie(
     val name: String?,
-    val image: Int,
+    val image: String?,
     val describtion: String?
-): Parcelable {
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
-        parcel.readInt(),
+        parcel.readString(),
         parcel.readString()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(name)
-        parcel.writeInt(image)
+        parcel.writeString(image)
         parcel.writeString(describtion)
     }
 
