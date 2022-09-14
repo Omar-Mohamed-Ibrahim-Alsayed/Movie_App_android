@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <ImageView
+        android:layout_width="175dp"
+        android:layout_height="180dp"
+        android:id="@+id/movieLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/gradient"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:background="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/movieLogo"
+        app:layout_constraintEnd_toEndOf="@+id/movieLogo"
+        app:layout_constraintTop_toBottomOf="@+id/movieLogo"
+        android:id="@+id/movieName"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
