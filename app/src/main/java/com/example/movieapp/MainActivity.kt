@@ -1,6 +1,7 @@
 package com.example.movieapp
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -33,12 +34,15 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.rview)
         val logOut=findViewById<Button>(R.id.logoutButton)
         logOut.setOnClickListener{
+            val mediaPlayer=MediaPlayer.create(this,R.raw.logout2)
+            mediaPlayer.start()
             val firstintent= Intent(this,HomePageActivity::class.java)
             startActivity(firstintent)
         }
         val userName=intent.getStringExtra("Name")
         val helloText=findViewById<TextView>(R.id.helloText)
-        helloText.text="Signed as ${userName}"
+        if (userName!="")
+         helloText.text="${userName}"
 
         val retrofit = Retrofit.Builder()
             .baseUrl(base_URL)
