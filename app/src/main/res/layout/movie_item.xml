@@ -3,12 +3,11 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:padding="4dp">
+    android:orientation="vertical">
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/movieLogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -16,15 +15,18 @@
 
 
     <TextView
+        android:id="@+id/movieName"
         android:layout_width="0dp"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:fontFamily="@font/playfair_display_sc"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:background="#00FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/movieLogo"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/movieLogo"
-        app:layout_constraintTop_toBottomOf="@+id/movieLogo"
-        android:id="@+id/movieName"/>
+        app:layout_constraintStart_toStartOf="@+id/movieLogo"
+        app:layout_constraintTop_toBottomOf="@+id/movieLogo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

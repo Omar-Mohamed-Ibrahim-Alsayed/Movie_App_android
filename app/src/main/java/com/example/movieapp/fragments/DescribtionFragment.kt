@@ -19,7 +19,6 @@ class DescribtionFragment(private val mov: Movie) : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_describtion, container, false)
     }
 
@@ -28,9 +27,12 @@ class DescribtionFragment(private val mov: Movie) : Fragment() {
         val movieName = view.findViewById<TextView>(R.id.name)
         val logo = view.findViewById<ImageView>(R.id.poster)
         val moviedesc = view.findViewById<TextView>(R.id.description)
+        val rate = view.findViewById<TextView>(R.id.rate)
         movieName.text= mov.name
         moviedesc.text= mov.describtion
+        rate.text= mov.rate.toString()
         Picasso.get().load(mov.image).into(logo)
+
 
     }
 

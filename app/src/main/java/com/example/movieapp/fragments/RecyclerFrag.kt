@@ -12,12 +12,11 @@ import com.example.movieapp.R
 import com.example.movieapp.networking.MoviesCallBack
 import com.example.movieapp.networking.MoviesNetworking
 
-class RecyclerFrag : Fragment() {
+class RecyclerFrag(val cat : String) : Fragment() {
 
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var over: View
-    private lateinit var moviesNetworking: MoviesNetworking
 
 
     override fun onCreateView(
@@ -34,19 +33,18 @@ class RecyclerFrag : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = requireView().findViewById(R.id.rview)
-        moviesNetworking = MoviesNetworking()
 
+        val moviesNetworking = MoviesNetworking(cat)
         val MoviesCallBack = object : MoviesCallBack {
             override fun onMoivesReady(movs: List<Movie>?) {
-                val moviesAdapter = movs?.let { MovieAdaptor(it, parentFragmentManager) }
+                val moviesAdapter = movs?.let { MovieAdaptor(movs, parentFragmentManager) }
                 recyclerView.adapter = moviesAdapter
             }
-
         }
-
-        val movies = moviesNetworking.updateList(MoviesCallBack)
+        moviesNetworking.updateList(MoviesCallBack)
 
 
     }
 
-}
+    }
+
