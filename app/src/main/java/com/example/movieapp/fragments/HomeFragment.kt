@@ -1,5 +1,6 @@
 package com.example.movieapp.fragments
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +24,6 @@ class HomeFragment : Fragment() {
     lateinit var upcoming: View
     lateinit var toprated: View
     lateinit var nowplaying: View
-    private lateinit var toolbar: Toolbar
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,14 +36,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        view.findViewById<TextView>(R.id.title).text = "Home"
+
         nowplaying = view.findViewById<ImageView>(R.id.nowPlaying)
         toprated = view.findViewById<ImageView>(R.id.topRated)
         popular = view.findViewById<ImageView>(R.id.popular)
         upcoming = view.findViewById<ImageView>(R.id.upcoming)
-        toolbar = view.findViewById(R.id.toolbar)
-        val activity = activity as AppCompatActivity?
 
-        activity!!.setSupportActionBar(toolbar)
 
         getPoster("now_playing",nowplaying.findViewById<ImageView>(R.id.fragImg))
         getPoster("top_rated",toprated.findViewById<ImageView>(R.id.fragImg))
@@ -71,6 +70,16 @@ class HomeFragment : Fragment() {
         }
 
 
+        val logout=requireView().findViewById<ImageView>(R.id.logout)
+        logout.setOnClickListener{
+            val mediaPlayer= MediaPlayer.create(requireContext(),R.raw.logout2)
+            mediaPlayer.start()
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.flFragment, Profile())
+                addToBackStack(null)
+                commit()
+            }
+        }
     }
 
     fun trans(cat: String) {
@@ -83,7 +92,7 @@ class HomeFragment : Fragment() {
 
     private fun getPoster(cat: String,current:ImageView){
 
-        var movies: String? = null
+        var movies: String?
         val moviesNetworking = MoviesNetworking(cat)
         val MoviesCallBack = object : MoviesCallBack {
             override fun onMoivesReady(movs: List<Movie>?) {

@@ -24,6 +24,7 @@ class DescribtionFragment(private val mov: Movie) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val movieName = view.findViewById<TextView>(R.id.name)
         val logo = view.findViewById<ImageView>(R.id.poster)
         val moviedesc = view.findViewById<TextView>(R.id.description)

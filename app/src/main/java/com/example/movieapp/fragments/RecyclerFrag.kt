@@ -1,16 +1,19 @@
 package com.example.movieapp.fragments
 
+import android.media.MediaPlayer
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieapp.Movie
-import com.example.movieapp.MovieAdaptor
-import com.example.movieapp.R
+import com.example.movieapp.*
 import com.example.movieapp.networking.MoviesCallBack
 import com.example.movieapp.networking.MoviesNetworking
+
 
 class RecyclerFrag(val cat : String) : Fragment() {
 
@@ -32,6 +35,9 @@ class RecyclerFrag(val cat : String) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        view.findViewById<TextView>(R.id.title).text = "$cat"
+
+
         recyclerView = requireView().findViewById(R.id.rview)
 
         val moviesNetworking = MoviesNetworking(cat)
@@ -43,6 +49,17 @@ class RecyclerFrag(val cat : String) : Fragment() {
         }
         moviesNetworking.updateList(MoviesCallBack)
 
+
+        val logout=requireView().findViewById<ImageView>(R.id.logout)
+        logout.setOnClickListener{
+            val mediaPlayer= MediaPlayer.create(requireContext(),R.raw.logout2)
+            mediaPlayer.start()
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.flFragment, Profile())
+                addToBackStack(null)
+                commit()
+            }
+        }
 
     }
 

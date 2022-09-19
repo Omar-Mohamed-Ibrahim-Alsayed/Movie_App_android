@@ -8,6 +8,7 @@
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/drawable/gradient.xml" value="0.2075" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/drawable/gradient2.xml" value="0.2075" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/drawable/hangover.xml" value="0.1765" />
+        <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.149" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/drawable/profile.xml" value="0.149" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/activity_home_item.xml" value="0.1390625" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/activity_main.xml" value="0.1671195652173913" />
@@ -16,10 +17,13 @@
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/fragment_describtion.xml" value="0.16304347826086957" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/fragment_home.xml" value="0.1390625" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/fragment_home_item.xml" value="0.1390625" />
+        <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/fragment_profile.xml" value="0.22282608695652173" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/fragment_recycler.xml" value="0.22826086956521738" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/fragment_recycler2.xml" value="0.10989583333333333" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/fragment_startup.xml" value="0.1390625" />
+        <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/fragment_tool_bar2.xml" value="0.22282608695652173" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/home_page.xml" value="0.1390625" />
+        <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/logouticon.xml" value="0.21603260869565216" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/movie_item.xml" value="0.22826086956521738" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/layout/toolbar.xml" value="0.1390625" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/menu/profile.xml" value="0.13802083333333334" />
