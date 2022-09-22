@@ -44,10 +44,11 @@ class MoviesNetworking(var category: String) {
     })
 }
 
+
 private fun sortMovies(res: List<MovieResult.ResultsDTO>): List<Movie> {
     var movieList = mutableListOf<Movie>()
     res.forEach {
-        movieList.add(Movie("${it.title}", "$imgBase${it.posterPath}", "\t${it.overview}",it.voteAverage))
+        movieList.add(Movie("${it.title}", it.id,"$imgBase${it.posterPath}", "\t${it.overview}",it.voteAverage))
     }
     return movieList
 }

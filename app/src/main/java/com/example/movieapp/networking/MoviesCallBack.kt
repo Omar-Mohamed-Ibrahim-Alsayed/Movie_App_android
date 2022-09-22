@@ -4,4 +4,5 @@ import com.example.movieapp.Movie
 
 interface MoviesCallBack {
     fun onMoivesReady(movs : List<Movie>?)
+    fun onMoiveReady(movs : Movie?)
 }

@@ -12,7 +12,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/favStar"
+        android:src="@drawable/ic_fav_star"/>
 
     <ImageView
         android:id="@+id/poster"

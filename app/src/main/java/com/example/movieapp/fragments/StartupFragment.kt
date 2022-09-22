@@ -1,6 +1,5 @@
 package com.example.movieapp.fragments
 
-import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
@@ -11,16 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
-import androidx.fragment.app.FragmentManager
-import com.example.movieapp.HomePageActivity
-import com.example.movieapp.Movie
-import com.example.movieapp.MovieAdaptor
 import com.example.movieapp.R
-import com.example.movieapp.networking.MoviesCallBack
-import com.example.movieapp.networking.MoviesNetworking
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
-import java.util.concurrent.TimeUnit
 
 class StartupFragment() : Fragment() {
 

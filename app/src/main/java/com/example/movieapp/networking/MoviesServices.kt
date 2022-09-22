@@ -12,4 +12,14 @@ interface MoviesServices {
         @Query("api_key") apiKey: String,
         @Query("language") lang: String,
         @Query("page") page: Int,
-    ): Call<MovieResult>}
+    ): Call<MovieResult>
+
+    @GET("/3/movie/{movie_id}")
+    fun getMovie(
+        @Path("movie_id") movie_id: Int,
+        @Query("api_key") apiKey: String,
+        @Query("language") lang: String
+        ): Call<favResult>
+
+
+}

@@ -35,9 +35,6 @@ class RecyclerFrag(val cat : String) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<TextView>(R.id.title).text = "$cat"
-
-
         recyclerView = requireView().findViewById(R.id.rview)
 
         val moviesNetworking = MoviesNetworking(cat)
@@ -46,9 +43,53 @@ class RecyclerFrag(val cat : String) : Fragment() {
                 val moviesAdapter = movs?.let { MovieAdaptor(movs, parentFragmentManager) }
                 recyclerView.adapter = moviesAdapter
             }
+
+            override fun onMoiveReady(movs: Movie?) {
+
+            }
         }
         moviesNetworking.updateList(MoviesCallBack)
 
+        // Profile Button
+
+        val profile=requireView().findViewById<ImageView>(R.id.profile)
+        profile.setOnClickListener{
+            val mediaPlayer= MediaPlayer.create(requireContext(),R.raw.logout2)
+            mediaPlayer.start()
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.flFragment, Profile())
+                addToBackStack(null)
+                commit()
+            }
+        }
+
+        //favourites Button
+
+        val favourites=requireView().findViewById<ImageView>(R.id.favourites)
+        favourites.setOnClickListener{
+            val mediaPlayer= MediaPlayer.create(requireContext(),R.raw.logout2)
+            mediaPlayer.start()
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.flFragment, Fav())
+                addToBackStack(null)
+                commit()
+            }
+        }
+
+        //homeButton
+
+        val home=requireView().findViewById<ImageView>(R.id.homeicon)
+        home.setOnClickListener{
+            val mediaPlayer= MediaPlayer.create(requireContext(),R.raw.logout2)
+            mediaPlayer.start()
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.flFragment, HomeFragment())
+                addToBackStack(null)
+                commit()
+            }
+        }
+
+        //logout Button
 
         val logout=requireView().findViewById<ImageView>(R.id.logout)
         logout.setOnClickListener{
@@ -63,5 +104,4 @@ class RecyclerFrag(val cat : String) : Fragment() {
 
     }
 
-    }
-
+}
