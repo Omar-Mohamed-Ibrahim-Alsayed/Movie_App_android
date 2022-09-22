@@ -34,6 +34,16 @@
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/menu/profile.xml" value="0.13802083333333334" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/University/Tinkers/MovieApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.149" />
+        <entry key="..\:/Users/moham/Downloads/Compressed/Movie_App_android-master_5/Movie_App_android-master/app/src/main/res/drawable/ic_person.xml" value="0.154" />
+        <entry key="..\:/Users/moham/Downloads/Compressed/Movie_App_android-master_5/Movie_App_android-master/app/src/main/res/drawable/ic_person_White.xml" value="0.154" />
+        <entry key="..\:/Users/moham/Downloads/Compressed/Movie_App_android-master_5/Movie_App_android-master/app/src/main/res/layout/activity_main.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/moham/Downloads/Compressed/Movie_App_android-master_5/Movie_App_android-master/app/src/main/res/layout/fragment_home.xml" value="0.22864583333333333" />
+        <entry key="..\:/Users/moham/Downloads/Compressed/Movie_App_android-master_5/Movie_App_android-master/app/src/main/res/layout/fragment_home_item.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/moham/Downloads/Compressed/Movie_App_android-master_5/Movie_App_android-master/app/src/main/res/layout/fragment_profile.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/moham/Downloads/Compressed/Movie_App_android-master_5/Movie_App_android-master/app/src/main/res/layout/fragment_recycler2.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/moham/Downloads/Compressed/Movie_App_android-master_5/Movie_App_android-master/app/src/main/res/layout/fragment_startup.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/moham/Downloads/Compressed/Movie_App_android-master_5/Movie_App_android-master/app/src/main/res/layout/home_page.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/moham/Downloads/Compressed/Movie_App_android-master_5/Movie_App_android-master/app/src/main/res/layout/toolbar.xml" value="0.22864583333333333" />
       </map>
     </option>
   </component>
