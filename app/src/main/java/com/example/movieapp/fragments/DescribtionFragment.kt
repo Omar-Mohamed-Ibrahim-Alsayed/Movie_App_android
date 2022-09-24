@@ -8,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import com.example.movieapp.Movie
 import com.example.movieapp.R
@@ -50,6 +48,7 @@ class DescribtionFragment(private val mov: Movie) : Fragment() {
         var isFav = checkFav()
         view.findViewById<ImageView>(R.id.favStar).setOnClickListener{
 
+            isFav = checkFav()
             if (isFav){
                 ids.remove(mov.id)
                 view?.findViewById<ImageView>(R.id.favStar)?.setImageResource(R.drawable.ic_fav_star)

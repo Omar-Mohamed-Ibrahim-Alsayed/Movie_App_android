@@ -77,8 +77,7 @@ class Fav : Fragment() {
 
         val profile = requireView().findViewById<ImageView>(R.id.profile)
         profile.setOnClickListener {
-            val mediaPlayer = MediaPlayer.create(requireContext(), R.raw.logout2)
-            mediaPlayer.start()
+
             parentFragmentManager.beginTransaction().apply {
                 replace(R.id.flFragment, Profile())
                 addToBackStack(null)
@@ -91,8 +90,7 @@ class Fav : Fragment() {
 
         val home = requireView().findViewById<ImageView>(R.id.homeicon)
         home.setOnClickListener {
-            val mediaPlayer = MediaPlayer.create(requireContext(), R.raw.logout2)
-            mediaPlayer.start()
+
             parentFragmentManager.beginTransaction().apply {
                 replace(R.id.flFragment, HomeFragment())
                 addToBackStack(null)
@@ -104,8 +102,7 @@ class Fav : Fragment() {
 
         val logout = requireView().findViewById<ImageView>(R.id.logout)
         logout.setOnClickListener {
-            val mediaPlayer = MediaPlayer.create(requireContext(), R.raw.logout2)
-            mediaPlayer.start()
+
             parentFragmentManager.beginTransaction().apply {
                 replace(R.id.flFragment, Profile())
                 addToBackStack(null)

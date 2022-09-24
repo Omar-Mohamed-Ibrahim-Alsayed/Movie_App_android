@@ -42,7 +42,7 @@ class StartupFragment() : Fragment() {
                 commit()
             }
         }
-        mediaPlayer= MediaPlayer.create(view.context,R.raw.clapping)
+        mediaPlayer= MediaPlayer.create(view.context,R.raw.startup)
         mediaPlayer.start()
         welcomeImage.animate().apply {
             duration=3000
